@@ -1,20 +1,21 @@
 <template>
     <div id="app">
-        <img src="./assets/logo.png">
-        <h2> {{msg}} </h2>
-        <firstcomponent></firstcomponent>
-        <router-link to="/firstView">跳转View1</router-link>
-        <router-link to="/secondView">跳转View2</router-link>
+        <!-- <img src="./assets/logo.png"> -->
+        <!-- <h2> {{msg}} </h2> -->
+        <!-- <firstcomponent></firstcomponent> -->
+        <couponsList></couponsList>
+        <!-- <router-link to="/firstView">跳转View1</router-link>
+        <router-link to="/secondView">跳转View2</router-link> -->
         <!-- 路由出口 -->
         <!-- 路由匹配到的组件将渲染在这里 -->
-        <router-view></router-view>
+        <!-- <router-view></router-view> -->
     </div>
 </template>
 
 <script>
 
 import firstcomponent from './components/first-component.vue'
-
+import couponsList from './views/userFreeCoupons.vue'
 export default {
   name: 'app',
   data () {
@@ -22,7 +23,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
         }
     },
-    components: { firstcomponent }
+    components: { firstcomponent, couponsList }
 };
 </script>
 

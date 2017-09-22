@@ -1,39 +1,47 @@
 <template>
-  <div id = "coupon_cell">
-      <ul> 
-          
-          
-      </ul>
+  <div id = "couponCell" class = "background">
+      <section class = "background_image">
+          <section>
+              
+          </section>
+      </section>
   </div>
 </template>
 
 <script>
 export default {
+    name: 'couponCell',
 }
+
 </script>
 
 <style lang="css">
 
     .background {
         background-color: #F6F9F9;
-        height: 150;
+        height: 100%;
+        width: 100%;
     }
 
     .background_image {
-        margin: 8px 8px 8px 8px;
+        background-image: url('../assets/coupon_background.png');
+        background-repeat:no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
     }
 
-    h1 {
+
+    .coupon_title {
         font: italic medium 20px;
         color: #3D3D3D;
     }
 
-    h2 {
+    .coupon_time {
         font: italic 13px;
         color: #7F7F7F;
     }
 
-    h3 {
+    .coupon_content {
         font: italic 11px;
         color: #B2B2B2;
     }

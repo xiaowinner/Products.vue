@@ -1,26 +1,24 @@
-<template lang="list">
-    <div>
-        <div
-        class="coupon_cell", 
-        style="position: relative"
-        >
-            <div
-            style="height: 100px; background-size:cover; flex:1"
-            :style="{'background-image': 'url('+ product.cover +')'}"
-            >
-
-            </div>
-
-        </div>
+<template>
+    <div id = "couponsList">
+        <couponCell> </couponCell>
     </div>
 </template>
 
 <script>
+import couponCell from '../components/coupon_cell.vue'
 export default {
-
+    name: "couponsList",
+    data () {
+        return {
+            msg: "cell"
+        }
+    },
+    components: { couponCell }
 }
 </script>
 
 <style lang="css">
+
+
 
 </style>
