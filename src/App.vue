@@ -3,7 +3,7 @@
         <!-- <img src="./assets/logo.png"> -->
         <!-- <h2> {{msg}} </h2> -->
         <!-- <firstcomponent></firstcomponent> -->
-        <couponsList></couponsList>
+        <couponsList style = "height:130px"></couponsList>
         <!-- <router-link to="/firstView">跳转View1</router-link>
         <router-link to="/secondView">跳转View2</router-link> -->
         <!-- 路由出口 -->
@@ -16,6 +16,7 @@
 
 import firstcomponent from './components/first-component.vue'
 import couponsList from './views/userFreeCoupons.vue'
+
 export default {
   name: 'app',
   data () {
@@ -34,7 +35,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 h1, h2 {
