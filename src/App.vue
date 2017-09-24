@@ -3,7 +3,7 @@
         <!-- <img src="./assets/logo.png"> -->
         <!-- <h2> {{msg}} </h2> -->
         <!-- <firstcomponent></firstcomponent> -->
-        <couponsList style = "height:130px"></couponsList>
+        <couponsList style = "height:100%"></couponsList>
         <!-- <router-link to="/firstView">跳转View1</router-link>
         <router-link to="/secondView">跳转View2</router-link> -->
         <!-- 路由出口 -->
@@ -22,7 +22,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
-        }
+    }
     },
     components: { firstcomponent, couponsList }
 };

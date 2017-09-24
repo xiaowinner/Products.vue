@@ -3,8 +3,9 @@
          <ul class = "list">
              <couponCell :coupons="coupons"> </couponCell>
         </ul>
-        <mugen-scroll :handler="loadMore" :should-handle="!loading">
-         </mugen-scroll>
+        <mugen-scroll v-if = "loadShow" :handler="loadMore" :should-handle="!loading">
+         loading...
+        </mugen-scroll>
     </div>
 </template>
 
@@ -13,6 +14,7 @@
 import couponCell from '../components/coupon_cell.vue'
 import axios from 'axios'
 import MugenScroll from 'vue-mugen-scroll'
+import InfiniteLoading from 'vue-infinite-loading';
 
 
 export default {
@@ -22,33 +24,37 @@ export default {
             msg: "cell",
             loading: false,
             currentPage: 1,
-            coupons: []
+            coupons: [],
+            loadShow: true
         }
     },
-    components: { couponCell,MugenScroll },
+    components: { couponCell,MugenScroll,InfiniteLoading },
     methods: {
+
         loadMore() {
+            if (this.loadShow === true) {
 
-            let originData = this.coupons
+                if (this.loading === false) {
 
-            if (this.loading === false) {
+                    let originData = this.coupons
+                    this.loading = true
+                    var url = 'https://api.beta.jojotu.cn/v1/user/coupons?api_token=MU5DfnSwdjMRj7X3VdM9fhZfjcx1olxJIMhyNynQMaza69SCqaPXzxbUmAol&page=' + this.currentPage.toString();
+                    console.log(url);
+                    axios.get(url)
+                    .then(response => {
+                        this.loading = false
+                        if (response.data.errcode === 0) {
+                        console.log(response.data);
+                        if (response.data.data.length === 0) {
+                            this.loadShow = false;
+                        }
+                        this.coupons = originData.concat(response.data.data);
+                        this.currentPage += 1;
+                        }
+                    }).catch(error => {
 
-                this.loading = true
-
-                var url = 'https://api.beta.jojotu.cn/v1/user/coupons?api_token=MU5DfnSwdjMRj7X3VdM9fhZfjcx1olxJIMhyNynQMaza69SCqaPXzxbUmAol&page=' + this.currentPage.toString();
-                console.log(url);
-
-                axios.get(url)
-                .then(response => {
-                    this.loading = false
-                    if (response.data.errcode === 0) {
-                    console.log(response.data);
-                    this.coupons = originData.concat(response.data.data);
-                    this.currentPage += 1;
-                    }
-                }).catch(error => {
-
-                }) 
+                    }) 
+                }
 
             }
         }

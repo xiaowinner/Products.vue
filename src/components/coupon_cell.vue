@@ -1,6 +1,6 @@
 <template>
 <div class = "background">
-      <section v-for = "item in coupons" :key = "item.alias" class = "background_image">
+      <section v-for = "item in coupons" :key = "item.coupon_code" class = "background_image">
         <p class = "coupon_title">{{item.name}}</p>
         <p class = "coupon_time">{{item.deadline}}</p>
         <section class = "bottom_position">
@@ -31,7 +31,7 @@ export default {
         background-repeat:no-repeat;
         background-size: 100%;
         background-position: center;
-        height: 100%;
+        height: 130px;
     }
 
 
