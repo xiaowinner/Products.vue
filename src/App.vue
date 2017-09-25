@@ -14,7 +14,7 @@
 
 <script>
 
-import firstcomponent from './components/first-component.vue'
+
 import couponsList from './views/userFreeCoupons.vue'
 
 export default {
@@ -24,7 +24,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
     },
-    components: { firstcomponent, couponsList }
+    components: { couponsList }
 };
 </script>
 

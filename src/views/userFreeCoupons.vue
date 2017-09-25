@@ -11,11 +11,9 @@
 
 
 <script>
-import couponCell from '../components/coupon_cell.vue'
+import couponCell from '../components/couponCell.vue'
 import axios from 'axios'
 import MugenScroll from 'vue-mugen-scroll'
-import InfiniteLoading from 'vue-infinite-loading';
-
 
 export default {
     name: "couponsList",
@@ -28,7 +26,7 @@ export default {
             loadShow: true
         }
     },
-    components: { couponCell,MugenScroll,InfiniteLoading },
+    components: { couponCell,MugenScroll },
     methods: {
 
         loadMore() {
