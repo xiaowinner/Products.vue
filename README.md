@@ -1,4 +1,4 @@
-# products-vue
+# Products.vue
 
 > Is my vue.js test.
 
